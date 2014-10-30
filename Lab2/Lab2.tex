@@ -17,9 +17,10 @@ This lab analyzes the properties of DC and AC circuits by examining the basic
 properties of resistors, diodes, capacitors, and inductors and constructing the
 two circuits with said components. The lab will examine the current-voltage
 characteristics of various load devices – the lab will look at resistors
-(individually, in series, and in parallel) and diodes, whereas the AC portion of
-the lab, specifically, will also look at two reactive components: capacitors and
-inductors.
+(individually, in series, and in parallel) and diodes and examine whether all
+load devices fall under Ohm's law. The AC portion of the lab will look at two
+reactive components capacitors and inductors and the transient states of
+circuits with those load devices.
 
 \section{Experimental Results}
 
@@ -333,7 +334,81 @@ using the percent error equation \textbf{(eq. \ref{percent_error})}:
     error=\frac{|0.000985-0.00107|}{0.00107}=7.94\%
 \end{equation}
 
-\section{Conclusion}
-Write your conclusion here.
+\subsection{AC Circuits: RLC Resonance}
 
+From looking at the graph of the RLC circuit \textbf{(fig.
+\ref{rlccurve_resonant})}, we can see that the resonant frequency is at about
+$1000 Hz$, which gives us our measured value for $f_{res}$.
+
+Given that we know the actual values of our inductor ($30mH$) and capacitor
+($1\mu F$), we can
+calculate the theoretical resonant frequency of the circuit using the following
+equation:
+
+\begin{equation}
+    \label{resonant_frequency_1}
+    f_{res}=\frac{1}{2\pi\sqrt{LC}}
+\end{equation}
+\begin{equation}
+    \label{resonant_frequency_2}
+    f_{res}=\frac{1}{2\pi\sqrt{(30\cdot10^{-3})(1\cdot10^{-6})}}
+\end{equation}
+\begin{equation}
+    \label{resonant_frequency_3}
+    f_{res}=918.88Hz
+\end{equation}
+
+Once again using the percent error equation \textbf{(eq. \ref{percent_error})}, we
+can calculate the error in our measurements:
+
+\begin{equation}
+    \label{resonance_err_analysis}
+    error=\frac{|1000-918.88|}{1000}=8.11\% \end{equation}
+
+\subsection{AC Circuits: RLC Q-factor}
+
+To find the Q-factor of the RLC circuit, we must first find the width of the
+resonance peak and the power loss in the circuit. To do this, we find $V_{max}$
+at $f_{res}$, then calculate $V_{max}/\sqrt{2}$ and find $f_{1}$ and $f_{2}$ where it intersects the
+resonance curve \textbf{(fig. \ref{rlccurve_resonant})}. Finally, the Q-factor
+can be determined by the following equation:
+
+\begin{equation}
+    \label{q_factor}
+    Q = \frac{f_{res}}{f_{2}-f_{1}}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charts/rlccurve_resonant_width}
+    \caption{Width of the resonance peak for the RLC circuit}
+    \label{rlccurve_resonant_width}
+\end{figure}
+
+Using $V_{max}=1.017V$, we can determine where this intersects the resonance
+curve \textbf{(fig. \ref{rlccurve_resonant})}. $f_{1}=158.489Hz$ and
+$f_{1}=5011.872Hz$. Plugging these into \textbf{eq. \ref{q_factor}}:
+
+\begin{equation}
+    \label{q_factor_1}
+    Q = \frac{1000}{5011.872-158.489}=\frac{1000}{4853.383}=0.206
+\end{equation}
+
+\section{Conclusion}
+Upon completion of the lab, we were able to achieve most of our main objectives.
+The DC circuit with a single resistor showed the Ohm's law was indeed correct
+for simple load devies, generating a linear, direct correlation between current
+and voltage. However we also showed that certain load devices (such as a diode,
+in our case) did that fall under Ohm's law, but rather, exhibited other
+non-linear properties. The diode in particular had an exponential relationship
+between current and voltage.
+
+The AC portion of the lab examined the transient states of various circuits. In
+observing the RC circuit, we noticed the capacitor rapidly charging in the
+beginning of each period, eventually reaching a steady state. By linearizing the
+relationship between the current and the voltage, we were able to determine the
+time constant value for the transient state. Finally, the RLC circuit showed the
+correlation between frequency and voltage, and how the resonant frequency at
+which the voltage is greatest in the circuit determines the Q-factor of the
+circuit itself.
 \end{document}
