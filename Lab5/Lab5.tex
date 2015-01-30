@@ -135,27 +135,192 @@ demagnification, as shown in the following chart.
     \label{thick_lenses_magnification}
 \end{figure}
 
+\subsection{Thin Lenses}
+
+For this part of the experiment, a beam splitter was used to shine two parallel
+laser light beams of monochromatic light into various thin lenses, which would
+result in the refraction and eventual convergence of those beams at some distance
+from the lens. We measured the distance at which the beams started to converge
+and started to diverge, obtaining the focal length of each lens by taking the
+average of such measurements. The following charts shows our results:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charts/thin_lenses}
+    \caption{Finding the focal length of various thin lenses}
+    \label{thin_lenses}
+\end{figure}
+
+Each final focus distance measurement had an uncertainty of $0.4mm$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charts/thin_lenses_results}
+    \caption{The focal lengths of various thin lenses}
+    \label{thin_lenses_results}
+\end{figure}
+
+Each experimental focal length had an uncertainty of $0.8mm$.
+
+Furthermore, we also combined the flat and the small disks and observed that the
+combination had an experimental focal length of $50mm \pm 0.5mm$ (the disks were
+8mm apart).
+
+\subsection{Image Formation with Lenses}
+
+For the final portion of the lab, we shined a LED through a $1mm$ grating.
+The LED and the grating were placed behind a lens and a screen was placed on the
+other side of the lens. To create the sharpest image possible, we experimented
+with various distances between the LED grating and the lens, and between the
+lens and the screen. Using the same method from the previous part of the lab
+(averaging the focal distances), we obtained the following data:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charts/image_formation}
+    \caption{Measuring the focal lengths at different distances}
+    \label{image_formation}
+\end{figure}
+
 \section{Analysis}
 
+\subsection{Snell's Law and Total Internal Reflection}
+
+Using the angles we recorded (incident and transimitted) from the first part of
+the lab, we can use Snell's Law (eq. \ref{snells_law}) to calculate the index of
+refraction of the trapezoidal prism.
+
 \begin{equation}
-    \label{vflambda}
-    v = f\lambda
-\end{equation}
-\begin{equation}
-    \label{vflambda_sound1}
-    v = (6.6kHz)(2\cdot0.0244)
-\end{equation}
-\begin{equation}
-    \label{vflambda_sound2}
-    v = 351.35 \frac{m}{s}
+    \label{snells_law}
+    n_{i}sin\theta_{i} = n_{t}sin\theta_{t}
 \end{equation}
 
+Since our incident medium is air, then we know that $n_{i}=1$, thus we can
+calculate for $n_{t}$.
+
+\begin{equation}
+    \label{snells_law_1}
+    (1)sin(33\degree) = n_{t}sin(19\degree)
+\end{equation}
+\begin{equation}
+    \label{snells_law_2}
+    n_{t} = 1.67
+\end{equation}
+
+With error propogation, we can report the following:
+
+\begin{equation}
+    \label{snells_law_3}
+    n_{t} = 1.67 \pm 0.2235
+\end{equation}
+
+Using the calculated value for the index of refraction of the trapezoidal prism,
+we can compute the theoretical value for the critical angle that would result in
+total internal reflection.
+
+\begin{equation}
+    \label{total_internal_reflection_1}
+    sin\theta_{c} = \frac{n_{t}}{n_{i}}
+\end{equation}
+\begin{equation}
+    \label{total_internal_reflection_2}
+    sin\theta_{c} = \frac{1}{1.67}
+\end{equation}
+\begin{equation}
+    \label{total_internal_reflection_3}
+    sin\theta_{c} = 36.8\degree \pm 0.43\degree
+\end{equation}
+
+We can see that our computed theoretical value for the critical angle is a few
+degrees less than our experimental value ($44\degree$), even with the
+uncertainty factored in. This error could have been caused by the limited
+precision of our measurement, since we could not accurately determine one
+precise value of the beam reflection. The manual measurements using a
+protractor could have easily yielded large errors due to a false zero value and
+the reflected laser beam itself had a large width with a variety of values we
+could have used for the critical angle.
+
+\subsection{Thick Lenses}
+
+Using the distance measurements between light rays before and after
+magnification, we can determine the magnification factor of the lenses:
+
+\begin{equation}
+    \label{magnification_factor_1}
+    M = \frac{final separation}{initial separation}
+\end{equation}
+\begin{equation}
+    \label{magnification_factor_2}
+    M = \frac{17}{10}
+\end{equation}
+\begin{equation}
+    \label{magnification_factor_3}
+    M = 1.7 \pm 0.3
+\end{equation}
+
+\subsection{Thin Lenses}
+
+When two thin lenses are placed next to each other in a sequence they form a
+combined lens with focal length $f_{total}$ as defined by the following
+equation:
+
+\begin{equation}
+    \label{lens_combo_1}
+    \frac{1}{f_{total}} = \frac{1}{f_{1}}+\frac{1}{f_{2}}-\frac{e}{f_{1}f_{2}}
+\end{equation}
+
+In eq. \ref{lens_combo_1}, $e$ represents the distance between the two lenses.
+As such, we can compute the theoretical value of the flat and small disk
+combination by using the focal lengths of each individual disk respectively.
+
+\begin{equation}
+    \label{lens_combo_1}
+    \frac{1}{f_{total}} = \frac{1}{425.5}+\frac{1}{54}-\frac{8}{(425.5)(54)}
+\end{equation}
+\begin{equation}
+    \label{lens_combo_1}
+    f_{total} = 49.01mm \pm 0.67mm
+\end{equation}
+
+As such, we can see that our theoretial value for the focal length of the flat
+and small disk combo falls under the value we obtained experimentally taking
+into account uncertainty and error propogation ($49mm
+\pm 1mm$).
+
+\subsection{Image Formation with Lenses}
+
+The position of an image formed by an object illuminated on a thin filmis given
+by the following equation:
+
+\begin{equation}
+    \label{image_formation_eq}
+    \frac{1}{f} = \frac{1}{o}+\frac{1}{i}
+\end{equation}
+
+As shown in chart \ref{image_formation}, we applied equation
+\ref{image_formation_eq} to our measured values of the object and image
+distances to determine the focal length for different distances. We then
+averaged all of the focal lengths obtained from different distances to determine
+the average focal length for the lens itself ($161.05mm \pm 0.707mm$). The
+theoretical value for the focal length is $167.5mm$ (from chart
+\ref{thin_lenses_results}), thus our experimental value
+for the focal length is just under the accepted value (uncertainties and errors
+considered).
+
+By comparing the focal length values with the object length, we can observe that
+$f < o < 2f$ yields magnification and $o > 2f$ yield demagnification. Finally,
+it's acceptible to say that the image formed is invertible for all distances
+between the lens and the screen.
+
 \section{Conclusion}
-This experiment successfully demonstrated properties of sound waves and light
-waves. We successfully calculated the speed of sound within the uncertainties
-and errors that propogated through the experiment using the relationship between
-angular frequency and wave vector. Furthermore, our calculations using the
-standing waves for both sound and light were close to the actual values of the
-speeds of sound and light, with errors falling within the threshold yielded
-by error propogation.
+This experiment successfully properties of thin and thick lenses, as well as
+verified several equations and laws that govern such optics. Snell's Law was
+successfully verified through our experiments. We were able to demonstrate the
+focal length of two separate lenses in combination, as well as verify
+magnification properties of images and objects. Most of our theoretical values
+all fell under the acceptable value range after taking into account error
+propogation and uncertainty. For the values that fell out of the range yielded
+by error propogation, we can attribute the error to lack of precision in
+measurements (measuring light beams with the human eye) as well as small
+uncertainties in the measurement of distances. 
 \end{document}
